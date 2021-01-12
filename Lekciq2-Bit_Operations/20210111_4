@@ -1,0 +1,13 @@
+#include <stdio.h>
+int vdigniBitNa(int number, int position);
+
+int main(){
+    int number = 5;
+    printf("%d\n", vdigniBitNa(number, 0));
+    
+}
+int vdigniBitNa(int number, int position){
+    number = number | 1 << position;
+    return number;
+
+}
