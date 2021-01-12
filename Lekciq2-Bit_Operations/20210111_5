@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int obarniBitNa(int number, int position);
+int main(){
+    printf("%d\n", obarniBitNa(9, 2));
+    return 0;
+}
+int obarniBitNa(int number, int position){
+    number = number ^ 1 << position;
+    
+    return number;
+}
