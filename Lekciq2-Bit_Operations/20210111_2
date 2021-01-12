@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int vzemiBitna(int x, int pos);
+
+int main(){
+    int x = 3;
+    int pos = 1;
+    printf("%d",vzemiBitna(x, pos));
+}
+
+int vzemiBitna(int x, int pos){
+    int mask = 1; 
+    x = x >> pos;
+    x = x&mask;
+    return x;
+ }
