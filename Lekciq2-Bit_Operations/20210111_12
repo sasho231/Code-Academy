@@ -1,0 +1,14 @@
+#include <stdio.h>
+int setBit(int number, int position);
+int main(){
+    int number = 36;
+    int position = 6;
+    printf("%d\n", setBit(number, position));
+
+}
+int setBit(int number, int position){
+    number = number | 1 << 3;
+    number = number | 1 << 6;
+    return number;
+
+}
