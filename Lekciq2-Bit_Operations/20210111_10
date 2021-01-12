@@ -1,0 +1,20 @@
+#include <stdio.h>
+int clearNumbers(int number, int n);
+int main(){
+    int number = 211;
+    int n = 4;
+    printf("%d\n", clearNumbers(number, n));
+
+
+}
+int clearNumbers(int number, int n){
+    number = number & (~ 1 << n);
+    number = number & (~ 1 << n - 1);
+    number = number & (~ 1 << n - 2);
+    number = number & (~ 1 << n - 3);
+    number = number & (~ 1 << n - 4);
+    return number;
+
+
+
+}
