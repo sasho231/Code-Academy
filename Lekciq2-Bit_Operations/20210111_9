@@ -1,0 +1,15 @@
+#include <stdio.h>  /* zanulqvane na bitove */
+int main(){
+    int number = 99;
+    number = number & (~ (1 << 3));
+    printf("%d\n", number);
+    number = number & (~ (1 << 4));
+    printf("%d\n", number);
+    number = number & (~ (1 << 5));
+    printf("%d\n", number);
+    number = number & (~ (1 << 6));
+    printf("%d\n", number);
+    number = number & (~ (1 << 7));
+    printf("%d\n", number);
+    return 0;
+}
