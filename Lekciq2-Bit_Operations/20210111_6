@@ -1,0 +1,9 @@
+#include <stdio.h>
+int main(){
+    int number = 5;
+    int position = 2;
+    number = number ^ 1 << position;
+    printf("%d", number);
+    return 0;
+
+}
