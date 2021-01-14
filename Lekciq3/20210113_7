@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main(){
+    unsigned short int number1 = 24212;
+    printf("%d\n", number1);
+    int number2 = -1357674;
+    printf("%d\n", number2);
+    unsigned int number3 = 1357674;
+    printf("%d\n", number3);
+    int number4 = -1357674000;
+    printf("%d\n", number4);
+    unsigned int number5 = 3657895000;
+    printf("%lld\n", number5);
+    return 0;
+}
