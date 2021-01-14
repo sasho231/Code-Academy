@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main(){
+    double number1 = 4.9876543;
+    printf("%1.7f\n", number1);
+    double number2 = 7.123456789012345678890;
+    printf("%1.21lf\n", number2);
+    long double number3 = 18398458438583853.28;
+    printf("%17.2Lf", number3);
+    long double number4 = 18398458438583853.39875937284928422;
+    printf("%lf\n", number4);
+    return 0;
+}
+
