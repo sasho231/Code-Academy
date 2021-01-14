@@ -1,0 +1,9 @@
+#include <stdio.h>
+int main(){
+    char x = 255;
+    char y = 10;
+    char result = x + y;
+    printf("%c", result);
+    return 0;
+
+}
