@@ -1,0 +1,18 @@
+#include <stdio.h>
+void bin(unsigned n){
+    unsigned i;
+    for (i = 1 << 7; i > 0; i = i >> 1 ) 
+		(n & i)? printf("1"): printf("0"); 
+	printf("\n");
+}
+int main(){
+
+    char number1 = 255;
+    bin(number1);
+    char number2 = 10;
+    bin(number2);
+    char result = number1 + number2;
+    printf("%d\n", result);
+    bin(result);
+    
+}
