@@ -1,0 +1,7 @@
+#include <stdio.h>
+int main(){
+    unsigned char number1 = 10;
+    signed char number2 = -127;
+    printf("%d", number1 + number2);
+    return 0;
+}
