@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main(){
+    int number1 = 10;
+    printf("%d\n", sizeof(number1));
+    float number2 = 10.3;
+    printf("%d\n", sizeof(number2));
+    short int number3 = 5;
+    printf("%d\n", sizeof(number3));
+    unsigned long int number4 = 1000000;
+    printf("%d\n", sizeof(number4));
+    return 0;
+}
