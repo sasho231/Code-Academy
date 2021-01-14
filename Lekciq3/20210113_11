@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main(){
+    float domati = 4.5;
+    float brashno = 1.8;
+    float kiselo_mlqko = 0.5;
+    float sladoled = 0.6;
+    float bonboni = 1.5;
+    float blizalki = 0.15;
+    int TomatoWeight;
+    printf("Zdraveite, dobre doshli v nashiq magazin! Dnes predlagame - presni domati, brashno, kiselo mlqko," 
+    " sladoled na funiiki i blizalki.\n");
+    printf("Kolko kilograma domati shte jelaete?\n");
+    scanf("%f", &TomatoWeight);
+    float TomatoTotal = TomatoWeight * domati;
+    return 0;
+
+}
