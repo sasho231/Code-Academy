@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main(){
+    int rez;
+    unsigned char karavana1 = 90;
+    unsigned char karavana2 = 90;
+    unsigned char karavana3 = 90;
+    unsigned char kemper1 = 100;
+    unsigned char kemper2 = 100;
+    unsigned char kemper3 = 100;
+    printf("Ako zelaete karavana natisnete 1\n");
+    printf("Ako zelaete kemper natisnete 2\n");
+    scanf("%d", &rez);
+    return 0;
+
+}
