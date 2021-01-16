@@ -1,0 +1,28 @@
+#include <stdio.h>
+const float c_pi = 3.14159;
+float area(float radius);
+float area2(float a, float b);
+int main(){
+    float a, b;
+    printf("area of circle with radius 1 is: %1.6lf\n", area(1));
+    printf("area of circle with radius 1.5 is: %lf\n", area(1.5));
+    printf("area of circle with radius 13 is: %lf\n", area(13));
+    printf("Vavedi strana a= ");
+    scanf("%f", &a);
+    printf("Vavedi strana b= ");
+    scanf("%f", &b);
+    printf("liceto na elipsata e: %lf\n", area2(a, b));
+
+
+}
+float area(float radius){
+    
+    float result;
+    result = radius * radius * c_pi;
+    return result;
+}
+float area2(float a, float b){
+    float result1;
+    result1 = a * b * c_pi;
+    return result1;
+}
