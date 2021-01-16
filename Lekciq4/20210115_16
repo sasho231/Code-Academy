@@ -1,0 +1,15 @@
+#include <stdio.h>
+const float c_pi = 3.14159;
+float area(float radius);
+int main(){
+    printf("area of circle with radius 1 is: %1.6lf\n", area(1));
+    printf("area of circle with radius 1.5 is: %lf\n", area(1.5));
+    printf("area of circle with radius 13 is: %lf\n", area(13));
+
+}
+float area(float radius){
+    
+    float result;
+    result = radius * radius * c_pi;
+    return result;
+}
