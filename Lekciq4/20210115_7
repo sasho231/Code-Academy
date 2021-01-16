@@ -1,0 +1,8 @@
+#include <stdio.h>
+int main(void){
+    double number1 = 0xBB;
+    signed long long number2 = 0xBB;
+    unsigned long long number3 = 0xBB;
+    printf("number1 = %lf, number2 = %lld, number3 = %lld\n", number1, number2, number3);
+    return 0;
+}
