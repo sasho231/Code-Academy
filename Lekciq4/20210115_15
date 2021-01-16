@@ -1,0 +1,13 @@
+#include <stdio.h>
+void test();
+int main(){
+    test();
+    test();
+    test();
+
+}
+void test(){
+    static int a = 10;
+    a += 1;
+    printf("a = %d\n", a);
+}
