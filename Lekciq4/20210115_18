@@ -1,0 +1,27 @@
+#include <stdio.h>
+int main(){
+    int rez;
+    unsigned char karavani_amount = 3;
+    unsigned char kemperi_amount = 3;
+    unsigned char price_karavana = 90;
+    unsigned char price_kemper = 100;
+    int sumToPay = 0;
+    char answer;
+
+    printf("Dobre doshli v Karavani i Kemmperi pod naem \n");
+    printf("Ako zelaete karavana natisnete 1\n");
+    printf("Ako zelaete kemper natisnete 2\n");
+    scanf("%d", &rez);
+    if(rez == 1){
+        sumToPay = 90;
+    }
+    else{
+        sumToPay = 100;
+    }
+    printf("Vie duljite: %d lv \n", sumToPay);
+    printf("Iskate li oshte nalichni produkti? \n");
+    scanf("%s", &answer);
+
+    return 0;
+
+}
