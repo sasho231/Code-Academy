@@ -1,0 +1,13 @@
+#include <stdio.h>
+extern int g_a;
+void test();
+int main(void){
+    test();
+    test();
+    test();
+    printf("a = %d\n", g_a);
+}
+void test(){
+    g_a += 1;
+}
+int g_a = 10;
