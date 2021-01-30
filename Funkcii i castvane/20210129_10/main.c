@@ -21,6 +21,7 @@ int main(){
     scanf("%f", &b);
     printf("NOK is : %d\n",(lcmNaive(abs(a), abs(b))));
     printf("Abs of a is: %.2f\n",getAbs(a));
+    printf("Abs of b is : %.2f\n", getAbs(b));
     printf("c = ");
     scanf("%d", &c);
     getSqrt(c);
