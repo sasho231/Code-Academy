@@ -3,43 +3,57 @@
  */
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
-void swap_str_ptrs(char const **arg1, char const **arg2)
+
+void quickSortMain(char items[][10], int count);
+void quickSort(char items[][10], int left, int right);
+
+int main(void)
 {
-    const char *tmp = *arg1;
-    *arg1 = *arg2;
-    *arg2 = tmp;
+  int i;
+  char str[][10] = { "this","is","a","test"};
+
+  quickSortMain(str, 4);
+
+  for(i=0; i<4; i++) {
+     printf("%s ", str[i]);
+  }
+  return 0;
 }
-void quicksort_strs(char const *args[], unsigned int len)
+void quickSortMain(char items[][10], int count)
 {
-    unsigned int i, pvt=0;
+  quickSort(items, 0, count-1);
+}
 
-    if (len <= 1)
-        return;
+void quickSort(char items[][10], int left, int right)
+{
+  int i, j;
+  char *x;
+  char temp[10];
 
-    // swap a randomly selected value to the last node
-    swap_str_ptrs(args+((unsigned int)rand() % len), args+len-1);
+  i = left;
+  j = right;
+  x = items[(left+right)/2];
 
-    // reset the pivot index to zero, then scan
-    for (i=0;i<len-1;++i)
-    {
-        if (strcmp(args[i], args[len-1]) < 0)
-            swap_str_ptrs(args+i, args+pvt++);
+  do {
+    while((strcmp(items[i],x) < 0) && (i < right)) {
+       i++;
     }
+    while((strcmp(items[j],x) > 0) && (j > left)) {
+        j--;
+    }
+    if(i <= j) {
+      strcpy(temp, items[i]);
+      strcpy(items[i], items[j]);
+      strcpy(items[j], temp);
+      i++;
+      j--;
+   }
+  } while(i <= j);
 
-    // move the pivot value into its place
-    swap_str_ptrs(args+pvt, args+len-1);
-
-    // and invoke on the subsequences. does NOT include the pivot-slot
-    quicksort_strs(args, pvt++);
-    quicksort_strs(args+pvt, len - pvt);
-}
-int main(void){
-    char s[] = "";
-    printf("Enter text: ");
-    scanf("%s", &s);
-    int size = strlen(s);
-    quicksort_strs(s, size);
-    printf("%s\n", s);
-    return 0;
+  if(left < j) {
+     quickSort(items, left, j);
+  }
+  if(i < right) {
+     quickSort(items, i, right);
+  }
 }
