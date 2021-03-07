@@ -43,7 +43,7 @@ int main(void){
 }
 short menu(){
     short choice=0;
-    printf("To move up press 1\nTo move left press 2\nTo move right press 3\nTo move down press 4\n");
+    printf("To move up press 1\nTo move left press 2\nTo move right press 3\nTo move down press 4\nTo rewind move press 5\n");
     scanf("%hd", &choice);
     return choice;
 }
@@ -53,12 +53,13 @@ void game(player* A, int array[][COLUMNS]){
     A->y = 0;
     A->counter = 0;
     int i=0, j =0;
+    int backup_x = 0, backup_y=0;
     for(i=0 ; i < ROWS; i++){     
         for(j=0; j< COLUMNS; j++){       
             if(array[i][j] == F)
                 printf("F");
             else
-            printf("%d ", array[i][j]);          
+            printf("%d ", array[i][j]);      
         }
         printf("\n");
     }
@@ -66,31 +67,44 @@ void game(player* A, int array[][COLUMNS]){
         result = menu();
         switch(result){
             case 1:
+            A->x = backup_x;
+            A->y = backup_y;
             if(A->x - array[A->x][A->y] < 0)
                 printf("Invalid move.\n");
             else
                 A->x -= array[A->x][A->y];
             break;
             case 2:
+            A->x = backup_x;
+            A->y = backup_y;
             if(A->y - array[A->x][A->y] < 0)
                 printf("Invalid move.\n");
             else
                 A->y -= array[A->x][A->y];
             break;
             case 3:
+            A->x = backup_x;
+            A->y = backup_y;
             if(A->y + array[A->x][A->y] > 7)
                 printf("Invalid move.\n");
             else
                 A->y += array[A->x][A->y];
             break;
             case 4:
+            A->x = backup_x;
+            A->y = backup_y;
             if(A->x + array[A->x][A->y] > 7)
                 printf("Invalid move.\n");
             else
                 A->x += array[A->x][A->y];
             break;
+            case 5:
+            A->x = backup_x;
+            A->y = backup_y;
+            break;
 
         }
+
         A->counter++;
         if(array[A->x][A->y] == 70){
             printf("\nYou won the game with %d moves!\n", A->counter);
@@ -99,7 +113,10 @@ void game(player* A, int array[][COLUMNS]){
         printf("You are on row [%d] position [%d] value: %d \n", A->x + 1, A->y + 1, array[A->x][A->y]);
         for(i=0 ; i < ROWS; i++){     
             for(j=0; j< COLUMNS; j++){
-                if(array[i][j] == F)
+                if(A->x == i && A->y == j){
+                    printf(".");
+                }
+                else if(array[i][j] == F)
                     printf("F");
                 else
                     printf("%d ", array[i][j]);          

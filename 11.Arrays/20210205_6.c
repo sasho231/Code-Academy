@@ -7,22 +7,30 @@ int main(void){
     char s[30] = "Hello";
     char *t = " world!";
     our_strcat(s, t);
+    printf("%s\n", s);
     return 0;
 
 }
 void our_strcat(char *s, char *t){
-    char *sPtr = s;
+    /* char *sPtr = s;
     char *tPtr = t;
     for(; *sPtr; *sPtr++);
     for(; *t; t++){
         *sPtr = *t;
         *sPtr++;
-    }
+    } 
+    printf("%s\n", s);*/
     /* char *p = s;
     while(*p){
         *p++;}
     while(*t){
         *p++ = *t++;
     } */
-    printf("%s\n", s);
+    while(*s++)
+    ;
+    --s;
+    while((*s++ = *t++))
+    ;
+
+    
 }
