@@ -67,29 +67,35 @@ void game(player* A, int array[][COLUMNS]){
     }
     while(1){
         result = menu();
-        backup_x = A->x;
-        backup_y = A->y;
         printf("%d %d\n", backup_x, backup_y);
         switch(result){
             case 1:
+            A->x = backup_x;
+            A->y = backup_y;
             if(A->x - array[A->x][A->y] < 0)
                 printf("Invalid move.\n");
             else
                 A->x -= array[A->x][A->y];
             break;
             case 2:
+            A->x = backup_x;
+            A->y = backup_y;
             if(A->y - array[A->x][A->y] < 0)
                 printf("Invalid move.\n");
             else
                 A->y -= array[A->x][A->y];
             break;
             case 3:
+            A->x = backup_x;
+            A->y = backup_y;
             if(A->y + array[A->x][A->y] > 7)
                 printf("Invalid move.\n");
             else
                 A->y += array[A->x][A->y];
             break;
             case 4:
+            A->x = backup_x;
+            A->y = backup_y;
             if(A->x + array[A->x][A->y] > 7)
                 printf("Invalid move.\n");
             else
@@ -98,8 +104,6 @@ void game(player* A, int array[][COLUMNS]){
             case 5:
             A->x = backup_x;
             A->y = backup_y;
-            printf("%d %d\n", backup_x, backup_y);
-
             break;
 
         }
