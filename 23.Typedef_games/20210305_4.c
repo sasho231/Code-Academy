@@ -33,9 +33,6 @@ int main(void){
     game(A, array);
     printf("Player 2 started the game.\n");
     game(B, array);
-
-    
-    
     
     free(A);
     free(B);
@@ -59,7 +56,7 @@ void game(player* A, int array[][COLUMNS]){
             if(array[i][j] == F)
                 printf("F");
             else
-            printf("%d ", array[i][j]);      
+            printf("%d ", array[i][j]);       
         }
         printf("\n");
     }
@@ -67,42 +64,45 @@ void game(player* A, int array[][COLUMNS]){
         result = menu();
         switch(result){
             case 1:
-            A->x = backup_x;
-            A->y = backup_y;
+            backup_x = A->x;
+            backup_y = A->y;
             if(A->x - array[A->x][A->y] < 0)
                 printf("Invalid move.\n");
             else
                 A->x -= array[A->x][A->y];
             break;
+
             case 2:
-            A->x = backup_x;
-            A->y = backup_y;
+            backup_x = A->x;
+            backup_y = A->y;
             if(A->y - array[A->x][A->y] < 0)
                 printf("Invalid move.\n");
             else
                 A->y -= array[A->x][A->y];
             break;
+
             case 3:
-            A->x = backup_x;
-            A->y = backup_y;
+            backup_x = A->x;
+            backup_y = A->y;
             if(A->y + array[A->x][A->y] > 7)
                 printf("Invalid move.\n");
             else
                 A->y += array[A->x][A->y];
             break;
+
             case 4:
-            A->x = backup_x;
-            A->y = backup_y;
+            backup_x = A->x;
+            backup_y = A->y;
             if(A->x + array[A->x][A->y] > 7)
                 printf("Invalid move.\n");
             else
                 A->x += array[A->x][A->y];
             break;
-            case 5:
-            A->x = backup_x;
-            A->y = backup_y;
-            break;
 
+            case 5:
+                A->x = backup_x;
+                A->y = backup_y;
+            break;
         }
 
         A->counter++;
@@ -123,8 +123,5 @@ void game(player* A, int array[][COLUMNS]){
             }
             printf("\n");
         }
-
-        
-
     }
 }
