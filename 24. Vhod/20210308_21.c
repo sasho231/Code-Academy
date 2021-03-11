@@ -23,7 +23,10 @@ int main(int argc, char* argv[]){
     int symbol_counter = 0;
     int rows_counter = 0;
     if(argc == 2){
-        fp = fopen(argv[1], "rt");
+        fp = fopen(*(argv + 1), "rt");
+        if(NULL == fp){
+            printf("Cant open the file.\n");
+        }
         while((c = fgetc(fp)) != EOF){
             if(c == ' ')
                 words_counter++;
@@ -31,13 +34,13 @@ int main(int argc, char* argv[]){
         printf("Number of words = %d\n", words_counter);
     }
     else if(argc == 3){
-        fp = fopen(argv[2], "rt");
-        char *scmp = 'c';
-        if(argv[1] == scmp){
+        fp = fopen(*(argv + 2), "rt");
+        if( *(argv + 1) == "-c"){
             while((c = fgetc(fp)) != EOF){
                 symbol_counter++;
             }
             printf("Symbols = %d\n", symbol_counter);
+
         }
     }
     fclose(fp);
