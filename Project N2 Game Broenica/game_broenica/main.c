@@ -15,8 +15,10 @@ int main(void){
     int n = 0;
     printf("Enter n number kids \n");
     scanf("%d", &n);
-    printf("Enter m\n");
+
+    printf("Enter m-th kid to be skipped\n");
     scanf("%d", &m);
+
     game(m, n);
     return 0;
 }
