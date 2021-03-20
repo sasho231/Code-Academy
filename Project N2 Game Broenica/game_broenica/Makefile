@@ -8,4 +8,4 @@ $(TARGET):$(OBJECT)
 .c:.o
 	$(COMPILE) -c $< -o $@
 clean:
-	del $(TARGET).exe $(OBJECT)
+	rm $(TARGET) $(OBJECT)

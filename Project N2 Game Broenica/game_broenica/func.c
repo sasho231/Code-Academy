@@ -1,11 +1,12 @@
 #include "func.h"
 
-
+/* new node in circular(krugov) linked list */
 node_t *add(int data)
 {
    node_t *temp = (node_t*)malloc(sizeof(node_t));
-   temp->next = temp;
-   temp->data = data;
+   temp->next = temp; /* store the address of node itself */ 
+   temp->data = data;  
+   return temp;
 }
 
 /* Function to find the only person left
@@ -42,6 +43,6 @@ void game(int m, int n){
 
     }
 
-    printf("Winner is %d\n", ptr1->data);
+    printf("Winner is player: %d\n", ptr1->data);
 
 }
