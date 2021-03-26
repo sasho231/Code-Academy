@@ -1,9 +1,11 @@
 #include "BattleField.h"
 
 void generateTerranFleet(BattleField *battleField, const char *terranFleetStr) {
+
 }
 
 void generateProtossFleet(BattleField *battleField, const char *protossFleetStr) {
+  
 }
 
 void startBattle(BattleField *battleField) {
