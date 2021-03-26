@@ -1,5 +1,6 @@
 #include <stdlib.h>
 
+
 #include "Vector.h"
 
 void vectorInit(Vector *vec, size_t initialCapacity) {

@@ -1,6 +1,6 @@
 CC=gcc
 COMPILE=$(CC) -g
-CFILES=$(dir \s *.c*)
+CFILES=$(find \s *.c*)
 OBJECT=main.o func.o
 TARGET=broenica_game
 $(TARGET):$(OBJECT)

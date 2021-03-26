@@ -1,0 +1,3 @@
+/home/aleksandar/Desktop/Strypes_Task/CMake_Homework_Task/megaAwesomeTask/src/build/CMakeFiles/rebuild_cache.dir
+/home/aleksandar/Desktop/Strypes_Task/CMake_Homework_Task/megaAwesomeTask/src/build/CMakeFiles/edit_cache.dir
+/home/aleksandar/Desktop/Strypes_Task/CMake_Homework_Task/megaAwesomeTask/src/build/CMakeFiles/song.dir
